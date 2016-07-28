@@ -1,0 +1,23 @@
+{
+  "name": "Chirper.Core",
+  "authors": [
+    "Toby <curti024@csusm.edu>"
+  ],
+  "description": "Core of project that will be viewed",
+  "main": "",
+  "keywords": [
+    "practice",
+    "learning",
+    "angular",
+    "login",
+    "OAuth"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular-local-storage": "^0.2.7",
+    "angular-toastr": "^1.7.0",
+    "angular-ui-router": "^0.3.0",
+    "bootstrap": "^3.3.6"
+  }
+}

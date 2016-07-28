@@ -1,0 +1,25 @@
+.lowerBody {
+    margin-top: 75px;
+}
+
+.marginTop {
+    margin-top: 10px;
+}
+
+.post {
+    min-height: 100px;
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color: cornsilk;
+    border-style: solid;
+    border-color: #E7E7E7;
+}
+
+.navbar {
+    background-color: cornsilk;
+}
+
+img {
+    max-width: 130%;
+    max-height: 130%;
+}

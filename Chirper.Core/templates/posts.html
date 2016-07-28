@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <a class="navbar-brand">
+            <img alt="Brand" src="..\app\img\chirp.png">
+        </a>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown dropdown-menu-right">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{posts.currentUser}}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a ng-click="posts.logout()">Logout</a></li>
+                    <!--                     <li role="separator" class="divider"></li>
+                    <li><a>Other</a></li>
+                    <li><a>Things</a></li> -->
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="col-md-8 col-md-offset-2 lowerBody">
+    <div>
+        <textarea class="col-md-12" maxlength="240" placeholder="So what's on your mind, Kemosabe?" ng-model="posts.postBody"></textarea>
+        <a class="btn btn-primary pull-right marginTop" ng-click="posts.add()">Post</a>
+    </div>
+    <div class="col-md-12 marginTop">
+        <div ng-repeat="post in posts.posts | orderBy : '-date' track by $index" class="post clearfix">
+        <div class="container">
+            <h3>
+	        	<a>{{post.userName}}</a>: {{post.text}}</h3>
+            <h5 ng-repeat="comment in post.comments track by $index">{{comment.text}} <a>{{comment.user.Email}}</a>
+	            <span ng-show="posts.isCurrentUser(comment.user.Email)" class="glyphicon glyphicon-trash btn btn-sm btn-danger" ng-click="posts.deleteComment(post, comment)"><span>
+            </h5>
+            <input type="text" ng-model="post.commentBody">
+            <button class="btn btn-primary" ng-click="posts.comment(post)">comment</button>
+            <button class="btn btn-primary" ng-click="posts.upvote(post)">upvote</button>
+            <span class="glyphicon glyphicon-trash btn btn-danger" ng-show="posts.isCurrentUser(post.user.Email)" ng-click="posts.deletePost(post)"></span>
+        </div>
+    </div>
+</div>
